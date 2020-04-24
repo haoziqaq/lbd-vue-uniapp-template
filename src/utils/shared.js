@@ -64,9 +64,9 @@ export function toNumber(v) {
 
 export function removeItem(arr, item) {
   if (arr.length) {
-    const index = arr.indexOf(item)
+    const index = arr.indexOf(item);
     if (index > -1) {
-      return arr.splice(index, 1)
+      return arr.splice(index, 1);
     }
   }
 }

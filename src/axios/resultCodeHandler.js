@@ -1,4 +1,3 @@
-import { Toast } from 'vant'
 import { codeHandlers, notPromptMessageCode } from "./code";
 
 export default async function (response) {
@@ -7,13 +6,13 @@ export default async function (response) {
     const responseMessage = response?.data?.msg;
     codeHandlers.has(responseCode) && codeHandlers.get(responseCode)(response);
     if (!notPromptMessageCode.includes(responseCode)) {
-      responseMessage && Toast(responseMessage);
+      responseMessage && uni.showToast({ title: responseMessage });
     }
   } else {
     if (response) {
-      Toast(`服务端${response.statusCode}错误`);
+      uni.showToast({ title: `服务端${response.statusCode}错误` });
     } else {
-      Toast('网络环境异常');
+      uni.showToast({ title: '网络环境异常' });
     }
   }
 }
