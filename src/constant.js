@@ -3,3 +3,4 @@ export const APP = {
   BASE_URL: process.env.VUE_APP_BASE_URL,
   STATIC_URL: process.env.VUE_APP_STATIC_URL,
 };
+

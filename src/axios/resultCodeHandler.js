@@ -10,9 +10,9 @@ export default async function (response) {
     }
   } else {
     if (response) {
-      uni.showToast({ title: `服务端${response.statusCode}错误` });
+      uni.showToast({ title: `服务端${response.statusCode}错误`, icon: 'none' });
     } else {
-      uni.showToast({ title: '网络环境异常' });
+      uni.showToast({ title: '网络环境异常', icon: 'none' });
     }
   }
 }
