@@ -36,7 +36,7 @@
     "@dcloudio/uni-mp-toutiao": "^2.0.0-26920200409002",
     "@dcloudio/uni-mp-weixin": "^2.0.0-26920200409002",
     "@dcloudio/uni-stat": "^2.0.0-26920200409002",
-    "castle-haozijunqaq-uni-utils": "^2.0.1",
+    "castle-haozijunqaq-uni-utils": "^2.0.2",
     "core-js": "^3.6.4",
     "flyio": "^0.6.2",
     "lbd-oss-sdk": "^1.0.4",
