@@ -64,13 +64,24 @@ export function toNumber(v) {
 
 export function removeItem(arr, item) {
   if (arr.length) {
-    const index = arr.indexOf(item);
+    const index = arr.indexOf(item)
     if (index > -1) {
-      return arr.splice(index, 1);
+      return arr.splice(index, 1)
     }
   }
 }
 
 export function hasOwn(val, key) {
   return Object.prototype.hasOwnProperty.call(val, key);
+}
+
+export function getKey(obj, value) {
+  return Object.keys(obj).find(key => obj[key] === value)
+}
+
+export function toOptions(obj, labelTransformer = String, { labelName = 'id', valueName = 'name' } = {}) {
+  return Object.keys(obj).map(key => ({
+    [labelName]: labelTransformer(key),
+    [valueName]: obj[key]
+  }))
 }

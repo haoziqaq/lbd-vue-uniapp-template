@@ -4,35 +4,37 @@
  * @Date 2020/4/21
  */
 
-import MultiMap from "../utils/MultiMap";
 
 /**
  * @des 后端状态码枚举
  */
-export const CODE = new MultiMap([
-  ['SUCCESS', 200, '请求成功'],
-]);
+export const Codes = {
+  SUCCESS: 200,
+}
 
+export const CodeMessages = {
+  [Codes.SUCCESS]: '请求成功',
+}
 
 /**
  * @des 后端返回状态码处理函数
  */
-export const codeHandlers = new Map([
+export const CodeHandlers = {
 
-]);
+}
 
 /**
  * @des 不需要提示的状态码
  */
-export const notPromptMessageCode = [
-  CODE.getValue('SUCCESS'),
+export const NotPromptMessageCodes = [
+  Codes.SUCCESS
 ];
 
 export function useRequest(request) {
   return new Promise(((resolve, reject) => {
     request
       .then(({ data }) => {
-        if (data?.code === CODE.getValue('SUCCESS')) {
+        if (data?.code === Codes.SUCCESS) {
           resolve({
             isSuccess: true,
             data,

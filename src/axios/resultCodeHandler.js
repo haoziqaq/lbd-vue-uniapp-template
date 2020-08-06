@@ -1,11 +1,11 @@
-import { codeHandlers, notPromptMessageCode } from "./utils";
+import { CodeHandlers, NotPromptMessageCodes } from "./utils";
 
 export default async function (response) {
   if (response?.statusCode === 200) {
     const responseCode = response?.data?.code;
     const responseMessage = response?.data?.msg;
-    codeHandlers.has(responseCode) && codeHandlers.get(responseCode)(response);
-    if (!notPromptMessageCode.includes(responseCode)) {
+    CodeHandlers[responseCode] && CodeHandlers[responseCode](response);
+    if (!NotPromptMessageCodes.includes(responseCode)) {
       responseMessage && uni.showToast({ title: responseMessage });
     }
   } else {
