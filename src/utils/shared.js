@@ -54,7 +54,7 @@ export function isPromise(v) {
 }
 
 export function toString(v) {
-  return isPrimitive(v) ? String(v) : JSON.stringify(v);
+  return isPrimitive(v) ? String(v) : JSON.stringify(v)
 }
 
 export function toNumber(v) {
