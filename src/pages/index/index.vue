@@ -1,23 +1,22 @@
 <template>
 	<div class="content">
-		<img class="logo" src="../../static/images/logo.png"/>
-		<div>
-			<div class="title">{{ time | formatDate('yyyy-MM-dd') }}</div>
-		</div>
+    <lbd-modal v-model="isShowModal">
+      <div class="title">{{ time | formatDate('yyyy-MM-dd') }}</div>
+    </lbd-modal>
 	</div>
 </template>
 
 <script>
+import Modal from 'lbd-ui/src/Modal/Modal'
 export default {
   data() {
     return {
+      isShowModal: true,
       time: new Date()
     }
   },
-  onLoad() {
-  },
-  methods: {
-
+  components: {
+    LbdModal: Modal
   }
 }
 </script>
