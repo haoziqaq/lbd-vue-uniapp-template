@@ -40,6 +40,7 @@
     "core-js": "^3.6.4",
     "flyio": "^0.6.2",
     "lbd-oss-sdk": "^1.0.4",
+    "lbd-ui": "^1.0.0",
     "regenerator-runtime": "^0.12.1",
     "vue": "^2.6.11",
     "vuex": "^3.2.0"

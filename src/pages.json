@@ -1,6 +1,13 @@
 {
     "pages": [
         {
+            "path": "pages/demo/index",
+            "style": {
+                "enablePullDownRefresh": false,
+                "navigationBarTitleText": "demo"
+            }
+        },
+        {
             "path": "pages/index/index",
             "style": {
                 "navigationBarTitleText": "uni-app"
