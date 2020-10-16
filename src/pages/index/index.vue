@@ -1,7 +1,8 @@
 <template>
 	<div class="content">
+    <button @click="isShowModal = true">show</button>
     <lbd-modal v-model="isShowModal">
-      <div class="title">{{ time | formatDate('yyyy-MM-dd') }}</div>
+      <div class="title" @click="isShowModal = false">close</div>
     </lbd-modal>
 	</div>
 </template>
@@ -12,12 +13,11 @@ export default {
   data() {
     return {
       isShowModal: true,
-      time: new Date()
     }
   },
   components: {
     LbdModal: Modal
-  }
+  },
 }
 </script>
 
@@ -35,6 +35,6 @@ export default {
 
 .title {
   font-size: 36upx;
-  color: #8f8f94;
+  color: #fff;
 }
 </style>
