@@ -4,7 +4,7 @@
     <lbd-modal v-model="isShowModal">
       <div class="title" @click="isShowModal = false">close</div>
     </lbd-modal>
-  </div>
+	</div>
 </template>
 
 <script>
@@ -17,7 +17,7 @@ export default {
   },
   components: {
     LbdModal: Modal,
-  }
+  },
 }
 </script>
 
