@@ -4,7 +4,7 @@
     <lbd-modal v-model="isShowModal">
       <div class="title" @click="isShowModal = false">close</div>
     </lbd-modal>
-	</div>
+  </div>
 </template>
 
 <script>
@@ -12,12 +12,12 @@ import Modal from 'lbd-ui/src/Modal/Modal'
 export default {
   data() {
     return {
-      isShowModal: true,
+      isShowModal: true
     }
   },
   components: {
-    LbdModal: Modal
-  },
+    LbdModal: Modal,
+  }
 }
 </script>
 
@@ -34,7 +34,7 @@ export default {
 }
 
 .title {
-  font-size: 36upx;
+  font-size: 34upx;
   color: #fff;
 }
 </style>
