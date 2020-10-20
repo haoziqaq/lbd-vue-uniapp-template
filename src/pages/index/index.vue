@@ -1,23 +1,37 @@
 <template>
 	<div class="content">
-    <button @click="isShowModal = true">show</button>
-    <lbd-modal v-model="isShowModal">
-      <div class="title" @click="isShowModal = false">close</div>
-    </lbd-modal>
+    <button @click="isShowDialog = true">show</button>
+
+    <lbd-dialog
+      v-model="isShowDialog"
+      title="提示"
+      message="你好啊~"
+      :show-cancel-button="true"
+      @confirm="handleConfirm"
+      @cancel="handleCancel"
+    />
 	</div>
 </template>
 
 <script>
-import Modal from 'lbd-ui/src/Modal/Modal'
+import Dialog from 'lbd-ui/src/Dialog/Dialog'
 export default {
   data() {
     return {
-      isShowModal: true
+      isShowDialog: true
     }
   },
   components: {
-    LbdModal: Modal,
+    LbdDialog: Dialog,
   },
+  methods: {
+    handleConfirm() {
+      console.log('confirm')
+    },
+    handleCancel() {
+      console.log('cancel')
+    }
+  }
 }
 </script>
 
