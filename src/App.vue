@@ -12,7 +12,7 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="less">
   view,
   scroll-view,
   swiper,

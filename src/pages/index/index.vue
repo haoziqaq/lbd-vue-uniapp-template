@@ -1,41 +1,42 @@
 <template>
-	<div class="content">
-    <button @click="isShowDialog = true">show</button>
+  <div>
+    <app-loading v-if="loading"></app-loading>
 
-    <lbd-dialog
-      v-model="isShowDialog"
-      title="提示"
-      message="你好啊~"
-      :show-cancel-button="true"
-      @confirm="handleConfirm"
-      @cancel="handleCancel"
-    />
-	</div>
+    <app-tabs :options="options" v-model="active" v-else></app-tabs>
+  </div>
 </template>
 
 <script>
-import Dialog from 'lbd-ui/src/Dialog/Dialog'
+import AppLoading from '../../components/loading/Loading';
+import AppTabs from '../../components/tabs/Tabs'
 export default {
-  data() {
-    return {
-      isShowDialog: true
-    }
-  },
+  data: () => ({
+    loading: true,
+    active: 1,
+    options: [
+      {
+        id: 1,
+        title: '测试1'
+      },
+      {
+        id: 2,
+        title: '测试2'
+      }
+    ]
+  }),
   components: {
-    LbdDialog: Dialog,
+    AppLoading,
+    AppTabs
   },
-  methods: {
-    handleConfirm() {
-      console.log('confirm')
-    },
-    handleCancel() {
-      console.log('cancel')
-    }
+  created() {
+    setTimeout(() => {
+      this.loading = false
+    }, 1000)
   }
 }
 </script>
 
-<style>
+<style lang="less">
 .content {
   text-align: center;
   height: 400upx;
